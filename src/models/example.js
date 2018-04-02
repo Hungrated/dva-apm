@@ -1,3 +1,9 @@
+function delay(timeout) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
+}
+
 export default {
 
   namespace: 'count',
@@ -8,7 +14,7 @@ export default {
   },
 
   reducers: {
-    add(state) {
+    plus(state) {
       const newCurrent = state.current + 1;
       return {
         ...state,
@@ -22,6 +28,14 @@ export default {
         ...state,
         current: state.current - 1,
       };
+    },
+  },
+
+  effects: {
+    * add(action, { call, put }) {
+      yield put({ type: 'plus' });
+      yield call(delay, 1000);
+      yield put({ type: 'minus' });
     },
   },
 
