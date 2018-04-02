@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './example.less'
+import styles from './example.less';
 
 const CountApp = ({ count, dispatch }) => {
   return (
