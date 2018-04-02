@@ -9,7 +9,7 @@ export default {
 
   reducers: {
     add(state) {
-      const current = state.current + 1;
+      const newCurrent = state.current + 1;
       return {
         ...state,
         record: newCurrent > state.record ? newCurrent : state.record,

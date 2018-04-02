@@ -13,6 +13,4 @@ const CountApp = ({ count, dispatch }) => {
   );
 };
 
-Example.propTypes = {};
-
 export default CountApp;
